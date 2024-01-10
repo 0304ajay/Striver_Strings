@@ -1,0 +1,23 @@
+int maxDepth(string s) {
+	// Write your code here.
+
+	int depth=0;
+	int max_depth=0;
+
+	for(int itr1=0;itr1<s.size();itr1++)
+	{
+		if(s[itr1]=='(')
+		{
+			depth++;
+		}
+		else if(s[itr1]==')')
+		{
+			max_depth=max(depth,max_depth);
+			depth--;
+		}
+	}
+	return max_depth;
+}
+
+
+//the question link ->https://leetcode.com/problems/longest-common-prefix/submissions/1141404595/
