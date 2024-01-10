@@ -1,0 +1,22 @@
+class Solution {
+public:
+    string largestOddNumber(string nums) {
+        // itr1-iterator 1
+        string s = "";
+        unsigned long long sum = 0;
+        int n = 0;
+        int lth = nums.size();
+        for (int itr1 = lth - 1; itr1 >= 0; itr1--) {
+            n = int(nums[itr1]) - int('0');
+            if (n % 2 != 0) {
+                return nums;
+            } else {
+                nums.pop_back();
+            }
+        }
+        return s;
+    }
+};
+
+
+// Link ->https://leetcode.com/problems/largest-odd-number-in-string/description/
