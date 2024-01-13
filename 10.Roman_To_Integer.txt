@@ -1,0 +1,38 @@
+class Solution {
+public:
+    int romanToInt(string s) {
+        map<char,int> v;
+        v['I']=1;
+        v['V']=5;
+        v['X']=10;
+        v['L']=50;
+        v['C']=100;
+        v['D']=500;
+        v['M']=1000;
+        int sum=0;
+        int n=s.size();
+        for(int itr1=0;itr1<s.size();itr1++)
+        {
+            if((v[s[itr1]]>v[s[itr1+1]]))
+            {
+                sum+=v[s[itr1]];
+            }
+            else if((v[s[itr1]]<v[s[itr1+1]]))
+            {
+                int temp=v[s[itr1+1]]-v[s[itr1]];
+                sum+=temp;
+                itr1++;
+            }
+            else 
+            {
+                sum+=v[s[itr1]];
+            }
+        }
+
+        return sum;
+    }
+};
+
+
+link ->https://www.codingninjas.com/studio/problems/roman-numeral-to-integer_981308
+link ->https://leetcode.com/problems/roman-to-integer/

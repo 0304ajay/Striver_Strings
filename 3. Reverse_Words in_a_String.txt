@@ -1,0 +1,26 @@
+class Solution {
+public:
+    string reverseWords(string s) {
+
+        string dup_str1, dup_str2;
+        int j = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+
+            if ((s[i] >= 65 && s[i] <= 90) || (s[i] >= 97 && s[i] <= 122) ||(s[i] >= 48 && s[i] <= 57)) {
+                dup_str1.push_back(' ');
+                for (j = i; j < s.length() && s[j] != ' '; j++) {
+                    dup_str1.push_back(s[j]);
+                }
+                dup_str2 = dup_str1 + dup_str2;
+                dup_str1.clear();
+                i = j;
+            }
+        }
+        dup_str2.erase(0, 1);
+        return dup_str2;
+    }
+};
+
+//link ->https://leetcode.com/problems/reverse-words-in-a-string/
+//link ->https://www.codingninjas.com/studio/problems/reverse-words_7037425?leftPanelTabValue=PROBLEM

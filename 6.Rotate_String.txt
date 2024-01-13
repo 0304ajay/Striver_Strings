@@ -1,0 +1,23 @@
+class Solution {
+public:
+    bool rotateString(string s, string goal) {
+        if(s==goal)
+        {
+            return 1;
+        }
+        for(int itr1=0;itr1<s.size();itr1++)
+        {
+            char k=s[0];
+            s.erase(0,1);
+            s.push_back(k);
+            if(s.compare(goal)==0)
+            {
+                return 1;
+            }
+        }
+        return 0;
+    }
+};
+
+//link ->https://leetcode.com/problems/rotate-string/description/
+// link ->https://www.codingninjas.com/studio/problems/check-if-one-string-is-a-rotation-of-another-string_1115683

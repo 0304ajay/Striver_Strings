@@ -1,0 +1,32 @@
+ class Solution {
+public:
+    string frequencySort(string s) {
+        int n=s.size();
+       vector<int> v(75, 0);
+	string str;
+	for (int itr1 = 0; itr1 < n; itr1++)
+	{
+		v[int(s[itr1]) - int('0')]++;
+	}
+
+	for (int itr1 = 0; itr1<n; itr1++)
+	{
+		auto it = max_element(v.begin(), v.end());
+		int freq = *max_element(v.begin(), v.end());
+		if (freq == 0) break;
+		int index = distance(v.begin(), it);
+		while (freq != 0)
+		{
+			int a = index+48;
+			str.push_back(a);
+			freq--;
+		}
+		v[index] = 0;
+	}
+
+	return str; 
+    }
+};
+
+//link ->https://leetcode.com/problems/sort-characters-by-frequency/description/
+//link ->https://www.codingninjas.com/studio/problems/sorting-characters-by-frequency_1263699

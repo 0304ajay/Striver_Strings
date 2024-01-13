@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int maxDepth(string s) {
+        int depth = 0;
+        int max_depth = 0;
+
+        for (int itr1 = 0; itr1 < s.size(); itr1++) {
+            if (s[itr1] == '(') {
+                depth++;
+            } else if (s[itr1] == ')') {
+                max_depth = max(depth, max_depth);
+                depth--;
+            }
+        }
+        return max_depth;
+    }
+};
+
+link ->https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/

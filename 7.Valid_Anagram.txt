@@ -1,0 +1,10 @@
+ class Solution {
+public:
+    bool isAnagram(string s1, string s2) {
+        sort(s1.begin(), s1.end());
+        sort(s2.begin(), s2.end());
+        return s1==s2;
+    }
+};
+//link ->https://leetcode.com/problems/valid-anagram/description/
+//link ->https://www.codingninjas.com/studio/problems/anagram-pairs_626517

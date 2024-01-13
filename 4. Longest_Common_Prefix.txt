@@ -1,0 +1,39 @@
+ class Solution {
+public:
+    string longestCommonPrefix(vector<string>& s) {
+        string common_Prefix="";
+        if(s.size()==1)
+        {
+            auto a=s[0];
+            return a;
+        }
+        
+        for(int itr1=0;s[0][itr1]!='\0'&&s[1][itr1]!='\0';itr1++)
+        {
+            if(s[0][itr1]!=s[1][itr1])
+            {
+                break;
+            }
+            else
+            common_Prefix.push_back(s[0][itr1]);
+        }
+
+        for(int itr1=2;itr1<s.size();itr1++)
+        {
+            if(s[itr1]=="") return "";
+            for(int itr2=0;common_Prefix[itr2]!='\0';itr2++)
+            {
+                if(common_Prefix[itr2]!=s[itr1][itr2])
+                {
+                    common_Prefix.erase(itr2);
+                    break;
+                }
+
+            }
+        }
+
+        return common_Prefix;
+    }
+};
+
+//link ->https://leetcode.com/problems/longest-common-prefix/
